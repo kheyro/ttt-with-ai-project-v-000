@@ -16,7 +16,7 @@ module Players
         # look for win
         my_intersection = combo & my_position
         my_position_remaining = combo - my_intersection
-        return (my_position_remaining.first + 1).to_s if my_position_remaining.size == 1 && board.cells[my_position_remaining.first] == " "
+        return (my_position_remaining.first + 1) if my_position_remaining.size == 1 && board.cells[my_position_remaining.first] == " "
       end
 
       # block other player if 1 move left from win
