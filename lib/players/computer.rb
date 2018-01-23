@@ -37,7 +37,7 @@ module Players
 
       # play anywhere, to start any combo
       return remaining_combo[0].first if remaining_combo.size > 0
-      
+
       # choose an empty position randomly
       return board.cells.map.with_index{|x, i| i if x == " "}.compact.sample.to_i + 1
 
