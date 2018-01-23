@@ -10,7 +10,7 @@ module Players
       my_position = board.cells.map.with_index{|x, i| i if x == self.token}.compact
 
       # statistically more combination possible
-      return 5 if board.turn_count == 0
+      return "5" if board.turn_count == 0
 
       Game::WIN_COMBINATIONS.each do |combo|
         # look for win
