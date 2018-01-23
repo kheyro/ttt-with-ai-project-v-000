@@ -24,13 +24,15 @@ class Game
 
   def turn
     player = current_player
-    move = -1
+    move = -1 # can improve this
 
     until @board.valid_move?(move)
+      puts "Your move is not valid! Try again" if move != -1
       move = player.move(@board)
     end
 
     @board.update(move, player)
+    @board.display
   end
 
   def play
