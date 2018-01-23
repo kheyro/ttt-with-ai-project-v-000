@@ -33,9 +33,11 @@ module Players
         my_intersection = combo & my_position
         my_position_remaining = combo - my_intersection
         return (my_position_remaining.first.to_i + 1) if my_position_remaining.size == 2 && board.cells[my_position_remaining.first] == " "
-        return (my_position_remaining.first.to_i + 1) if my_position_remaining.size == 3 && board.cells[my_position_remaining.first] == " "
       end
 
+      # play anywhere, to start any combo
+      return remaining_combo[0].first if remaining_combo.size > 0
+      
       # choose an empty position randomly
       return board.cells.map.with_index{|x, i| i if x == " "}.compact.sample.to_i + 1
 
